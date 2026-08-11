@@ -4,13 +4,17 @@
 
 Quartz Protocol defines the common RPC protocol used by Quartz firmware and its companion client.
 
-It contains packet definitions, protocol constants, versioning information, profiling identifiers, and other structures that need to remain consistent between the device and host.
+It contains packet definitions, protocol constants, versioning information, profiling identifiers, and other structures
+that need to remain consistent between the device and host.
 
-The project is intentionally kept lightweight and freestanding-friendly so the same definitions can be compiled directly into both embedded firmware and desktop applications.
+The project is intentionally kept lightweight and freestanding-friendly so the same definitions can be compiled directly
+into both embedded firmware and desktop applications.
 
-This is a **personal project written for my own hardware and software**. It's public because someone else might find the code useful or interesting, but it is **not intended to be a general-purpose device protocol or compatibility layer**.
+This is a **personal project written for my own hardware and software**. It's public because someone else might find the
+code useful or interesting, but it is **not intended to be a general-purpose device protocol or compatibility layer**.
 
-I make no guarantees about supporting third-party firmware, clients, devices, or maintaining compatibility with software outside the Quartz projects I personally use.
+I make no guarantees about supporting third-party firmware, clients, devices, or maintaining compatibility with software
+outside the Quartz projects I personally use.
 
 ## Goals
 
@@ -39,13 +43,15 @@ The protocol is used for features such as:
 - Diagnostics
 - Firmware commands
 
-Packet structures are shared directly between the firmware and client wherever possible, avoiding duplicated protocol definitions and keeping both sides in sync.
+Packet structures are shared directly between the firmware and client wherever possible, avoiding duplicated protocol
+definitions and keeping both sides in sync.
 
 ## Handshake and Versioning
 
 Before normal RPC communication begins, the client and device perform a stable handshake.
 
-The handshake exposes the protocol version implemented by the device, allowing incompatible clients and firmware to detect each other before attempting to exchange normal packets.
+The handshake exposes the protocol version implemented by the device, allowing incompatible clients and firmware to
+detect each other before attempting to exchange normal packets.
 
 The handshake format is intended to remain stable even as the rest of the protocol evolves.
 
@@ -53,7 +59,8 @@ Protocol versions may distinguish between compatible additions and breaking chan
 
 A client should never assume that an unknown protocol version is compatible.
 
-Future versions may also expose capabilities so clients can determine which optional features are supported by a particular firmware build.
+Future versions may also expose capabilities so clients can determine which optional features are supported by a
+particular firmware build.
 
 ## Binary Layout
 
