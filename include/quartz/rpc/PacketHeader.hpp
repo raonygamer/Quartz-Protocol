@@ -7,7 +7,7 @@
 
 namespace quartz::rpc
 {
-    struct PacketHeader
+    struct alignas(4) PacketHeader
     {
         static constexpr std::uint32_t MAGIC_NUMBER = 0x43505251u; // "QRPC"
         std::uint32_t Magic;

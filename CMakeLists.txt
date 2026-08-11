@@ -1,11 +1,17 @@
 cmake_minimum_required(VERSION 4.3)
-project(QuartzProtocol)
+
+project(QuartzProtocol LANGUAGES CXX)
+
+add_library(QuartzProtocol INTERFACE)
 file(GLOB_RECURSE INCLUDES CONFIGURE_DEPENDS
-        include/*.hpp
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/*.hpp"
 )
-add_library(QuartzProtocol INTERFACE ${INCLUDES})
-target_include_directories(QuartzProtocol INTERFACE
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
+
+target_sources(QuartzProtocol INTERFACE
+        FILE_SET HEADERS
+        BASE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include
+        FILES
+        ${INCLUDES}
 )
 
 target_compile_features(QuartzProtocol INTERFACE cxx_std_20)
