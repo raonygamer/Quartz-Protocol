@@ -13,8 +13,10 @@ namespace quartz::rpc::payloads
         std::uint32_t EndScanTicks = 0;
         std::uint32_t StateUpdateTicks = 0;
         std::uint32_t HIDTicks = 0;
+        std::uint32_t RGBTicks = 0;
         std::uint32_t AverageScanPeriodTicks = 0;
+        std::uint32_t RGBSlotMaxTicks = 0;
     };
 
-    static_assert(sizeof(PerformancePayload) == 28, "PerformancePayload should be 28 bytes!");
+    static_assert(sizeof(PerformancePayload) == 36, "PerformancePayload should be 36 bytes!");
 }

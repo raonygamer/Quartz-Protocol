@@ -11,6 +11,7 @@ namespace quartz::rpc
         PerformanceRequest = 3,
         PerformanceResponse = 4,
         FramebufferSet = 5,
+        MatrixTimingProbeResult = 6,
         Error = 0xFFFFu
     };
 }
