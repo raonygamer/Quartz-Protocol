@@ -10,7 +10,7 @@ namespace quartz::rpc
         Pong = 2,
         PerformanceRequest = 3,
         PerformanceResponse = 4,
-        LEDFramebufferSet = 5,
+        FramebufferSet = 5,
         Error = 0xFFFFu
     };
 }

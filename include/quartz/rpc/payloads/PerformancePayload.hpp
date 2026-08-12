@@ -1,9 +1,10 @@
 #pragma once
 #include <cstdint>
+#include "quartz/utils/Alignment.hpp"
 
 namespace quartz::rpc::payloads
 {
-    struct alignas(4) PerformancePayload
+    struct PROTOCOL_ALIGNED PerformancePayload
     {
         /// Always at 48 MHz
         const std::uint32_t CoreClock = 48'000'000;
