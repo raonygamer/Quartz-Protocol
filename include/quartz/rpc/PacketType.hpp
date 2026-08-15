@@ -12,6 +12,11 @@ namespace quartz::rpc
         PerformanceResponse = 4,
         FramebufferSet = 5,
         MatrixTimingProbeResult = 6,
+        FirmwareInfoRequest = 7,
+        FirmwareInfoResponse = 8,
+        ChangeLEDCharacteristic = 9,
+        ChangeFirmwareRGBMode = 10,
+        ClientDisconnected = 11,
         Error = 0xFFFFu
     };
 }
